@@ -77,16 +77,16 @@ export const get = query({
             seller: sellerWithCountryAndLanguages
         };
 
-        // get last fulfilment
-        const lastFulfilment = await ctx.db.query("orders")
+        // get last fulfillment
+        const lastFulfillment = await ctx.db.query("orders")
             .withIndex("by_projectId", (q) => q.eq("projectId", project._id))
             .order("desc")
             .first();
 
 
-        const projectWithSellerAndLastFulfilment = {
+        const projectWithSellerAndLastFulfillment = {
             ...projectWithSeller,
-            lastFulfilment: lastFulfilment,
+            lastFulfillment: lastFulfillment,
         };
 
 
@@ -103,12 +103,12 @@ export const get = query({
             return { ...image, url: imageUrl };
         }));
 
-        const projectWithSellerAndLastFulfilmentAndImages = {
-            ...projectWithSellerAndLastFulfilment,
+        const projectWithSellerAndLastFulfillmentAndImages = {
+            ...projectWithSellerAndLastFulfillment,
             images: imagesWithUrls,
         };
 
-        return projectWithSellerAndLastFulfilmentAndImages;
+        return projectWithSellerAndLastFulfillmentAndImages;
     },
 });
 

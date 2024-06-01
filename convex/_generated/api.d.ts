@@ -19,6 +19,7 @@ import type * as offers from "../offers.js";
 import type * as project from "../project.js";
 import type * as projectMedia from "../projectMedia.js";
 import type * as projects from "../projects.js";
+import type * as reviews from "../reviews.js";
 import type * as stripe from "../stripe.js";
 import type * as users from "../users.js";
 
@@ -36,6 +37,7 @@ declare const fullApi: ApiFromModules<{
   project: typeof project;
   projectMedia: typeof projectMedia;
   projects: typeof projects;
+  reviews: typeof reviews;
   stripe: typeof stripe;
   users: typeof users;
 }>;
