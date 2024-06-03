@@ -78,7 +78,7 @@ export const ProjectCard = ({
         <Link href={`/${seller?.username}/${id}`}>
             {/* <div className="group aspect-[130/100] border rounded-lg flex flex-col justify-between overflow-hidden"> */}
             <div className="group border rounded-lg flex flex-col justify-between overflow-hidden">
-                <div className="relative flex-1 bg-blue-50">
+                <div className="relative flex-1 bg-green-50">
                     <ConvexImage
                         storageId={storageId}
                         title={title}

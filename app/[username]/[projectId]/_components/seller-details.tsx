@@ -66,7 +66,7 @@ export const SellerDetails = ({
                 </div>
             </div>
             <Button variant={"outline"} onClick={handleContactClick}>Hubungi saya</Button>
-            <div className="border border-black/20 p-4 space-y-3 rounded-2xl">
+            <div className="border border-green/20 p-4 space-y-3 rounded-2xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4">
                     {/* <div>
                         <p className="font-semibold">From</p>

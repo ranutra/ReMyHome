@@ -45,7 +45,7 @@ const ManageProjects = () => {
                         Kelola, buat, dan edit proyek dan penawaran Anda.
                     </p>
                 </div>
-                <Button className="ml-auto" variant={"blue"}>
+                <Button className="ml-auto" variant={"green"}>
                     <Link href={`/seller/${currentUser?.username}/manage-projects/create`}>Buat</Link>
                 </Button>
             </div>

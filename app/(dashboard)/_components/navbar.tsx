@@ -112,7 +112,7 @@ const Navbar = () => {
                                     }}
                                     className="p-0"
                                 >
-                                    <Heart className={favorites ? "fill-black" : ""} />
+                                    <Heart className={favorites ? "fill-green" : ""} />
                                 </Link>
                             </Button>
                         </TooltipProvider>
