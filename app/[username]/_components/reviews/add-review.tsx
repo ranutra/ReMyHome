@@ -30,22 +30,22 @@ interface AddReviewProps {
 
 const formSchema = z.object({
     comment: z.string().min(5, {
-        message: "Comment must be at least 5 characters.",
+        message: "Komentar harus minimal 5 karakter.",
     }),
     service_as_described: z.number().min(1, {
-        message: "Service as described must be at least 1.",
+        message: "Layanan sebagaimana dijelaskan harus minimal 1.",
     }).max(5, {
-        message: "Service as described must be at most 5.",
+        message: "Layanan sebagaimana dijelaskan harus maksimal 5.",
     }),
     recommend_to_a_friend: z.number().min(1, {
-        message: "Recommend to a friend must be at least 1.",
+        message: "Rekomendasikan kepada teman harus minimal 1.",
     }).max(5, {
-        message: "Recommend to a friend must be at most 5.",
+        message: "Rekomendasikan kepada teman harus maksimal 5.",
     }),
     communication_level: z.number().min(1, {
-        message: "Communication level must be at least 1.",
+        message: "Tingkat komunikasi harus minimal 1.",
     }).max(5, {
-        message: "Communication level must be at most 5.",
+        message: "Tingkat komunikasi harus maksimal 5.",
     }),
 });
 
@@ -92,7 +92,7 @@ export const AddReview = ({
 
     return (
         <>
-            <h1 className="text-3xl font-bold text-neutral-700">Add review</h1>
+            <h1 className="text-3xl font-bold text-neutral-700">Tambahkan ulasan</h1>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                     {/* Comment Field */}
@@ -101,12 +101,12 @@ export const AddReview = ({
                         name="comment"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Comment</FormLabel>
+                                <FormLabel>Komentar</FormLabel>
                                 <FormControl>
                                     <Input placeholder="Enter your comment" {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                    Leave review comment.
+                                    Berikan komentar ulasan.
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
@@ -119,14 +119,14 @@ export const AddReview = ({
                         name="service_as_described"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Service As Described</FormLabel>
+                                <FormLabel>Layanan sebagaimana dijelaskan</FormLabel>
                                 <FormControl>
                                     <Input type="number" min="1" max="5" placeholder="Rate from 1 to 5" {...field}
                                         onChange={(e) => field.onChange(parseInt(e.target.value))}
                                     />
                                 </FormControl>
                                 <FormDescription>
-                                    Rate how accurately the service was described.
+                                    Beri nilai seberapa akurat layanan tersebut dengan yang dijelaskan.
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
@@ -139,12 +139,12 @@ export const AddReview = ({
                         name="recommend_to_a_friend"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Recommend to a Friend</FormLabel>
+                                <FormLabel>Rekomendasikan ke Teman</FormLabel>
                                 <FormControl>
                                     <Input type="number" min="1" max="5" placeholder="Rate from 1 to 5" {...field} onChange={(e) => field.onChange(parseInt(e.target.value))} />
                                 </FormControl>
                                 <FormDescription>
-                                    Would you recommend our service to a friend?
+                                    Apakah Anda akan merekomendasikan layanan kami kepada teman Anda?
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
@@ -157,19 +157,19 @@ export const AddReview = ({
                         name="communication_level"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Communication Level</FormLabel>
+                                <FormLabel>Tingkat Komunikasi</FormLabel>
                                 <FormControl>
                                     <Input type="number" min="1" max="5" placeholder="Rate from 1 to 5" {...field} onChange={(e) => field.onChange(parseInt(e.target.value))} />
                                 </FormControl>
                                 <FormDescription>
-                                    Rate the level of communication received.
+                                    Menilai tingkat komunikasi yang diterima.
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
 
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit">Kirim</Button>
                 </form>
             </Form>
         </>

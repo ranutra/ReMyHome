@@ -53,7 +53,7 @@ export const Content = ({
             <div className="flex flex-col font-semibold text-zinc-700 space-y-2">
                 <div className="flex space-x-2">
                     <Clock />
-                    <p>{offer.delivery_days} Days Delivery</p>
+                    <p>{offer.delivery_days} Pengiriman Hari</p>
                 </div>
                 <div className="flex space-x-2">
                     <RefreshCcw />
@@ -62,8 +62,8 @@ export const Content = ({
             </div>
             {(currentUser?._id !== sellerId) && (
                 <>
-                    <Button className="w-full" onClick={handleOrderNow}>Order Now</Button>
-                    <Button className="w-full" onClick={handleSendMessage} variant={"ghost"}>Send Message</Button>
+                    <Button className="w-full" onClick={handleOrderNow}>Pesan Sekarang</Button>
+                    <Button className="w-full" onClick={handleSendMessage} variant={"ghost"}>Kirim Pesan</Button>
                 </>
             )}
             {(currentUser?._id === sellerId) && (

@@ -51,7 +51,7 @@ export const Footer = ({
         )}
         {reviews.length === 0 && (<p className="font-normal">0</p>)} */}
             </div>
-            <p className="font-semibold">From Rp.{offer.price}</p>
+            <p className="font-semibold">Dari Rp.{offer.price}</p>
             <p className="opacity-0 group-hover:opacity-100 transition-opacity text-[11px] text-muted-foreground truncate">
                 {createdAtLabel}
             </p>

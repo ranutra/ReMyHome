@@ -39,14 +39,14 @@ export const Actions = ({
         navigator.clipboard.writeText(
             `${window.location.origin}/project/${id}`,
         )
-            .then(() => toast.success("Link copied"))
-            .catch(() => toast.error("Failed to copy link"))
+            .then(() => toast.success("Tautan disalin"))
+            .catch(() => toast.error("Gagal menyalin tautan"))
     };
 
     const onDelete = () => {
         mutate({ id })
-            .then(() => toast.success("Board deleted"))
-            .catch(() => toast.error("Failed to delete board"));
+            .then(() => toast.success("Project dihapus"))
+            .catch(() => toast.error("Gagal menghapus project"));
     };
 
     return (
@@ -65,18 +65,18 @@ export const Actions = ({
                     className="p-3 cursor-pointer"
                 >
                     <Link2 className="h-4 w-4 mr-2" />
-                    Copy board link
+                    Salin tautan project
                 </DropdownMenuItem>
                 <DropdownMenuItem
                     onClick={() => onOpen(id, title)}
                     className="p-3 cursor-pointer"
                 >
                     <Pencil className="h-4 w-4 mr-2" />
-                    Rename
+                    Ganti nama
                 </DropdownMenuItem>
                 <ConfirmModal
-                    header="Delete board?"
-                    description="This will delete the board and all of its contents."
+                    header="Hapus project?"
+                    description="Ini akan menghapus proyek dan semua isinya."
                     disabled={pending}
                     onConfirm={onDelete}
                 >
@@ -85,7 +85,7 @@ export const Actions = ({
                         className="p-3 cursor-pointer text-sm w-full justify-start font-normal"
                     >
                         <Trash2 className="h-4 w-4 mr-2" />
-                        Delete
+                        Hapus
                     </Button>
                 </ConfirmModal>
             </DropdownMenuContent>

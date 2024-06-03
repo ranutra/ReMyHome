@@ -1,10 +1,10 @@
 import Navbar from "../(dashboard)/_components/navbar";
 
-interface UserGigLayoutProps {
+interface UserProjectLayoutProps {
     children: React.ReactNode;
 }
 
-const DashboardLayout = ({ children }: UserGigLayoutProps) => {
+const DashboardLayout = ({ children }: UserProjectLayoutProps) => {
     return (
         <div>
             <Navbar />

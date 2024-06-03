@@ -22,9 +22,9 @@ export const ReviewsStats = ({ reviews }: ReviewsStatsProps) => {
 
     // Calculate rating breakdown values dynamically
     const ratingBreakdown = {
-        'Seller communication level': calculateAverage(reviews.map(review => review.communication_level)),
-        'Recommend to a friend': calculateAverage(reviews.map(review => review.recommend_to_a_friend)),
-        'Service as described': calculateAverage(reviews.map(review => review.service_as_described))
+        'Tingkat komunikasi penjual': calculateAverage(reviews.map(review => review.communication_level)),
+        'Rekomendasikan ke teman': calculateAverage(reviews.map(review => review.recommend_to_a_friend)),
+        'Layanan sebagaimana dijelaskan': calculateAverage(reviews.map(review => review.service_as_described))
     };
 
     function calculateAverage(values: number[]): number {
@@ -36,21 +36,21 @@ export const ReviewsStats = ({ reviews }: ReviewsStatsProps) => {
     return (
         <div className="flex space-x-12">
             <div className="w-full md:w-1/2">
-                <p className='font-bold'>Average Review Score: {averageScore.toFixed(2)} stars</p>
+                <p className='font-bold'>Skor Ulasan Rata-rata: {averageScore.toFixed(2)} bintang</p>
                 {starDistribution.map((count, index) => {
                     const starLevel = 5 - index; // Stars level (5, 4, 3, 2, 1)
                     const percentage = (count / maxReviews) * 100; // Calculate percentage for progress bar
 
                     return (
                         <div key={starLevel} className='flex space-x-2 items-center font-bold'>
-                            <Button variant={"ghost"} className='font-bold'>{starLevel} Stars ({count})</Button>
+                            <Button variant={"ghost"} className='font-bold'>{starLevel} Bintang ({count})</Button>
                             <Progress value={percentage} />
                         </div>
                     );
                 })}
             </div>
             <div className="w-full md:w-1/2">
-                <p className="flex flex-col font-bold space-y-8">Rating Breakdown</p>
+                <p className="flex flex-col font-bold space-y-8">Perincian Peringkat</p>
                 {Object.entries(ratingBreakdown).map(([label, value], index) => (
                     <p key={index} className="flex items-center text-gray-600 font-semibold mt-2">
                         <span className="mr-2">{label}:</span>

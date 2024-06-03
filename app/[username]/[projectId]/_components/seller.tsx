@@ -20,7 +20,7 @@ export const Seller = ({
         <div className="flex space-x-4">
             <Link href={`/${seller.username}`}>
                 <Avatar className="w-16 h-16 ">
-                    <AvatarImage src={seller.profileImageUrl || "https://github.com/shadcn.png"} />
+                    <AvatarImage src={seller.profileImageUrl || "https://placehold.co/400"} />
                     <AvatarFallback>{seller.username.charAt(0)}</AvatarFallback>
                 </Avatar>
             </Link>

@@ -46,7 +46,7 @@ export const SellerDetails = ({
             <div className="flex space-x-4">
                 <Link href={`/${seller.username}`}>
                     <Avatar className="w-20 h-20">
-                        <AvatarImage src={seller.profileImageUrl || "https://github.com/shadcn.png"} />
+                        <AvatarImage src={seller.profileImageUrl || "https://placehold.co/400"} />
                         <AvatarFallback>{seller.username.charAt(0)}</AvatarFallback>
                     </Avatar>
                 </Link>
@@ -65,7 +65,7 @@ export const SellerDetails = ({
                     </div>
                 </div>
             </div>
-            <Button variant={"outline"} onClick={handleContactClick}>Contact me</Button>
+            <Button variant={"outline"} onClick={handleContactClick}>Hubungi saya</Button>
             <div className="border border-black/20 p-4 space-y-3 rounded-2xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4">
                     {/* <div>
@@ -73,12 +73,12 @@ export const SellerDetails = ({
                         <p>{seller.country.countryName}</p>
                     </div> */}
                     <div>
-                        <p className="font-semibold">Joined</p>
+                        <p className="font-semibold">Bergabung</p>
                         <p>{joinedDate}</p>
                     </div>
                     {(timeAgo !== undefined) && (
                         <div>
-                            <p className="font-semibold">Last delivery</p>
+                            <p className="font-semibold">Pengiriman terakhir</p>
                             <p>{timeAgo}</p>
                         </div>
                     )}

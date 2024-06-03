@@ -28,7 +28,7 @@ const SellerPage = ({
     }
 
     if (seller === null || projects === null) {
-        return <div>Not found</div>
+        return <div>Tidak ditemukan</div>
     }
 
     // const skillsString = skills ? skills.map((skill) => skill.skill).join(", ") : "";
@@ -42,7 +42,7 @@ const SellerPage = ({
                         reviews={reviews}
                     />
                     <div>
-                        <p className="font-bold">About me</p>
+                        <p className="font-bold">Tentang saya</p>
                         <p>{seller.about}</p>
                     </div>
                     {/* <div>

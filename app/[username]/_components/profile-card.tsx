@@ -29,7 +29,7 @@ export const ProfileCard = ({
     return (
         <div className="flex space-x-4">
             <Avatar className="w-36 h-36">
-                <AvatarImage src={seller.profileImageUrl || "https://github.com/shadcn.png"} />
+                <AvatarImage src={seller.profileImageUrl || "https://placehold.co/400"} />
                 <AvatarFallback>{seller.username.charAt(0)}</AvatarFallback>
             </Avatar>
             <div className="w-[300px] flex flex-col justify-between gap-y-1">

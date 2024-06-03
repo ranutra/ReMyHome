@@ -22,9 +22,9 @@ export const Reviews = ({ reviews }: ReviewsProps) => {
 
     // Calculate rating breakdown values dynamically
     const ratingBreakdown = {
-        'Seller communication level': calculateAverage(reviews.map(review => review.communication_level)),
-        'Recommend to a friend': calculateAverage(reviews.map(review => review.recommend_to_a_friend)),
-        'Service as described': calculateAverage(reviews.map(review => review.service_as_described))
+        'Tingkat komunikasi penjual': calculateAverage(reviews.map(review => review.communication_level)),
+        'Rekomendasikan ke teman': calculateAverage(reviews.map(review => review.recommend_to_a_friend)),
+        'Layanan sebagaimana dijelaskan': calculateAverage(reviews.map(review => review.service_as_described))
     };
 
     function calculateAverage(values: number[]): number {

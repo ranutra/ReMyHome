@@ -43,7 +43,7 @@ export const Description = ({
                     description: JSON.stringify(editor.document, null, 2)
                 });
             } else {
-                toast.error('Content is too long. Not saved.', {
+                toast.error('Konten terlalu panjang. Tidak disimpan.', {
                     duration: 2000,
                     icon: <AlertOctagon />,
                 });

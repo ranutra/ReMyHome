@@ -25,7 +25,7 @@ const ProjectPage = ({
     params
 }: PageProps) => {
     const project = useQuery(api.project.get, { id: params.projectId as Id<"projects"> });
-    //const seller = useQuery(api.users.getUserByUsername, { username: params.username });
+    const seller = useQuery(api.users.getUserByUsername, { username: params.username });
     const categoryAndSubcategory = useQuery(api.project.getCategoryAndSubcategory, { projectId: params.projectId as Id<"projects"> });
     const offers = useQuery(api.offers.get, { projectId: params.projectId as Id<"projects"> });
     const reviews = useQuery(api.reviews.getByProject, { projectId: params.projectId as Id<"projects"> });
@@ -36,11 +36,11 @@ const ProjectPage = ({
     }
 
     if (project === null || categoryAndSubcategory === null || offers === null) {
-        return <div>Not found</div>
+        return <div>Tidak ditemukan</div>
     }
 
     if (project.published === false) {
-        return <div>This project is not published</div>
+        return <div>Project ini tidak dipublikasikan</div>
     }
 
     const editUrl = `/seller/${project.seller.username}/manage-projects/edit/${project._id}`
@@ -74,9 +74,9 @@ const ProjectPage = ({
                     <div className="border border-zinc-400 p-4 space-y-2 rounded-2xl">
                         <div className="flex space-x-2">
                             <Info />
-                            <h4>Delivery preferences</h4>
+                            <h4>Preferensi pengiriman</h4>
                         </div>
-                        <p>Please communicate any preferences or concerns regarding the utilization of AI tools in the fulfillment and/or delivery of your request.</p>
+                        <p>Harap sampaikan preferensi atau masalah apa pun terkait preferensi pengiriman Anda.</p>
                     </div>
                     <SellerDetails
                         seller={project.seller}

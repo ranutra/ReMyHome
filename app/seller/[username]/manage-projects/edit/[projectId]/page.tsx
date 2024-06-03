@@ -63,7 +63,7 @@ const Edit = ({ params }: EditdPageProps) => {
     }
 
     if (project === null) {
-        return <div>Not found</div>;
+        return <div>Tidak ditemukan</div>;
     }
 
     async function handleSendImage(event: FormEvent) {
@@ -85,14 +85,14 @@ const Edit = ({ params }: EditdPageProps) => {
             const json = await result.json();
 
             if (!result.ok) {
-                throw new Error(`Upload failed: ${JSON.stringify(json)}`);
+                throw new Error(`Upload gagal: ${JSON.stringify(json)}`);
             }
             const { storageId } = json;
             // Step 3: Save the newly allocated storage id to the database
             await sendImage({ storageId, format: "image", projectId: nonNullableproject._id })
                 .catch((error) => {
                     console.log(error);
-                    toast.error("Maximum 5 files reached.");
+                    toast.error("Maksimum 5 gambar tercapai.");
                 });
         }));
 
@@ -106,7 +106,7 @@ const Edit = ({ params }: EditdPageProps) => {
             publish({ id: params.projectId as Id<"projects"> })
                 .catch((error) => {
                     console.log(error);
-                    toast.error("Failed to publish. Please make sure there are at least 1 image, 3 offers and a description.");
+                    toast.error("Gagal dipublikasikan. Pastikan setidaknya ada 1 gambar, 3 penawaran, dan deskripsi.");
                 });
         }
         else {
@@ -133,7 +133,7 @@ const Edit = ({ params }: EditdPageProps) => {
                         </Button>
                     </Link>
                     <Button disabled={removePending} variant={"secondary"} onClick={onDelete}>
-                        Delete
+                        Hapus
                     </Button>
                 </div>
 
@@ -150,7 +150,7 @@ const Edit = ({ params }: EditdPageProps) => {
                     />
                 </div>
                 <form onSubmit={handleSendImage} className="space-y-2">
-                    <Label className="font-normal">Add up to 5 images:</Label>
+                    <Label className="font-normal">Upload hingga 5 gambar:</Label>
                     <div className="flex space-x-2">
                         <Input
                             id="image"
@@ -166,7 +166,7 @@ const Edit = ({ params }: EditdPageProps) => {
                             type="submit"
                             disabled={selectedImages.length === 0}
                             className="w-fit"
-                        >Upload Image</Button>
+                        >Upload Gambar</Button>
                     </div>
                 </form>
 
@@ -174,7 +174,7 @@ const Edit = ({ params }: EditdPageProps) => {
                     projectId={project._id}
                 />
 
-                <h2 className="font-semibold">About this project</h2>
+                <h2 className="font-semibold">Tentang project ini</h2>
             </div>
 
 

@@ -46,12 +46,12 @@ export const ConfirmModal = ({
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogCancel>Batal</AlertDialogCancel>
                     <AlertDialogAction
                         disabled={disabled}
                         onClick={handleConfirm}
                     >
-                        Confirm
+                        Konfirmasi
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
