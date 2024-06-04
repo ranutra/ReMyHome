@@ -16,7 +16,7 @@ interface FormProps {
 const ConversationPage = ({
     params,
 }: FormProps) => {
-    const [conversation, setConversation] = useState<Doc<"conversations"> | null>(null);
+    const [conversation, setConversation] = useState<any>(null);
 
     const get = useMutation(api.conversations.getOrCreateConversation);
     const conv = useQuery(api.conversations.getConversation, { username: params.otherUserName });
