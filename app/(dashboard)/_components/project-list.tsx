@@ -21,7 +21,7 @@ interface ProjectListProps {
 export const ProjectList = ({
     query,
 }: ProjectListProps) => {
-    const projects: FullProjectType[] | undefined = useQuery(api.projects.get, { search: query.search, favorites: query.favorites, filter: query.filter });
+    const projects: any[] | undefined = useQuery(api.projects.get, { search: query.search, favorites: query.favorites, filter: query.filter });
     const [projectsWithFavorite, setProjectsWithFavorite] = useState<FullProjectType[] | undefined>(undefined);
     // filter for favorites if query.favorites is true
     useEffect(() => {

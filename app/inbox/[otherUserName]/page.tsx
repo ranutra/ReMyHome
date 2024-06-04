@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import Form from "./_components/form";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
-import { useConversation } from "@/hooks/use-conversation";
+// import { useConversation } from "@/hooks/use-conversation";
 import Body from "./_components/body";
 import { useCallback, useEffect, useState } from "react";
 import { Doc } from "@/convex/_generated/dataModel";
@@ -23,7 +23,7 @@ const ConversationPage = ({
     useEffect(() => {
         const callMutation = async () => {
             try {
-                const result = await get({ otherUsername: params.otherUserName });
+                const result = await get({ otherUsername: params.otherUserName }) as any;
                 setConversation(result);
             } catch (error) {
                 console.error('Mutation failed:', error);
